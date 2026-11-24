@@ -1,120 +1,52 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl" class="dark theme-violet">
+<html lang="fa" dir="rtl" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>۱۳ASE — سامانه یکپارچه خدمات تخصصی و فروشگاه</title>
+  <title>۱۳ASE — سامانه مدیریت خدمات و فروشگاه</title>
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
     
+    :root {
+      --bg-base: #090a10;
+      --bg-surface: #0f111a;
+      --bg-card: #141624;
+      --bg-elevated: #1b1e30;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(255, 255, 255, 0.16);
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --primary-fg: #ffffff;
+      
+      --badge-waiting-bg: rgba(245, 158, 11, 0.12);
+      --badge-waiting-text: #fbbf24;
+      --badge-waiting-border: rgba(245, 158, 11, 0.25);
+      
+      --badge-ready-bg: rgba(16, 185, 129, 0.12);
+      --badge-ready-text: #34d399;
+      --badge-ready-border: rgba(16, 185, 129, 0.25);
+      
+      --badge-diag-bg: rgba(56, 189, 248, 0.12);
+      --badge-diag-text: #38bdf8;
+      --badge-diag-border: rgba(56, 189, 248, 0.25);
+    }
+
     * {
       font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
       -webkit-font-smoothing: antialiased;
       box-sizing: border-box;
     }
 
-    /* THEME 1: VIOLET TECH (DEFAULT) */
-    html.theme-violet {
-      --bg-base: #090a10;
-      --bg-surface: #10111a;
-      --bg-card: #151622;
-      --bg-elevated: #1e1f30;
-      --border: rgba(255, 255, 255, 0.08);
-      --border-hover: rgba(139, 92, 246, 0.4);
-      --primary: #8b5cf6;
-      --primary-hover: #7c3aed;
-      --primary-fg: #ffffff;
-      --badge-waiting-bg: rgba(245, 158, 11, 0.15);
-      --badge-waiting-text: #fbbf24;
-      --badge-waiting-border: rgba(245, 158, 11, 0.3);
-      --badge-ready-bg: rgba(16, 185, 129, 0.15);
-      --badge-ready-text: #34d399;
-      --badge-ready-border: rgba(16, 185, 129, 0.3);
-      --badge-diag-bg: rgba(56, 189, 248, 0.15);
-      --badge-diag-text: #38bdf8;
-      --badge-diag-border: rgba(56, 189, 248, 0.3);
-    }
-
-    /* THEME 2: SAPPHIRE NAVY */
-    html.theme-navy {
-      --bg-base: #050811;
-      --bg-surface: #0b1120;
-      --bg-card: #0f172a;
-      --bg-elevated: #1e293b;
-      --border: rgba(255, 255, 255, 0.08);
-      --border-hover: rgba(14, 165, 233, 0.4);
-      --primary: #0284c7;
-      --primary-hover: #0369a1;
-      --primary-fg: #ffffff;
-      --badge-waiting-bg: rgba(251, 146, 60, 0.15);
-      --badge-waiting-text: #fb923c;
-      --badge-waiting-border: rgba(251, 146, 60, 0.3);
-      --badge-ready-bg: rgba(20, 184, 166, 0.15);
-      --badge-ready-text: #2dd4bf;
-      --badge-ready-border: rgba(20, 184, 166, 0.3);
-      --badge-diag-bg: rgba(99, 102, 241, 0.15);
-      --badge-diag-text: #818cf8;
-      --badge-diag-border: rgba(99, 102, 241, 0.3);
-    }
-
-    /* THEME 3: EMERALD PRO */
-    html.theme-emerald {
-      --bg-base: #050e0b;
-      --bg-surface: #0a1713;
-      --bg-card: #0e201a;
-      --bg-elevated: #162f27;
-      --border: rgba(255, 255, 255, 0.08);
-      --border-hover: rgba(16, 185, 129, 0.4);
-      --primary: #10b981;
-      --primary-hover: #059669;
-      --primary-fg: #022c22;
-      --badge-waiting-bg: rgba(234, 179, 8, 0.15);
-      --badge-waiting-text: #facc15;
-      --badge-waiting-border: rgba(234, 179, 8, 0.3);
-      --badge-ready-bg: rgba(16, 185, 129, 0.2);
-      --badge-ready-text: #34d399;
-      --badge-ready-border: rgba(16, 185, 129, 0.4);
-      --badge-diag-bg: rgba(20, 184, 166, 0.15);
-      --badge-diag-text: #2dd4bf;
-      --badge-diag-border: rgba(20, 184, 166, 0.3);
-    }
-
-    /* THEME 4: CLEAN STUDIO LIGHT */
-    html.theme-light {
-      --bg-base: #f8fafc;
-      --bg-surface: #ffffff;
-      --bg-card: #ffffff;
-      --bg-elevated: #f1f5f9;
-      --border: #e2e8f0;
-      --border-hover: #cbd5e1;
-      --primary: #0f172a;
-      --primary-hover: #1e293b;
-      --primary-fg: #ffffff;
-      --badge-waiting-bg: #fef3c7;
-      --badge-waiting-text: #b45309;
-      --badge-waiting-border: #fde68a;
-      --badge-ready-bg: #d1fae5;
-      --badge-ready-text: #047857;
-      --badge-ready-border: #a7f3d0;
-      --badge-diag-bg: #e0f2fe;
-      --badge-diag-text: #0369a1;
-      --badge-diag-border: #bae6fd;
-    }
-
     body {
       background-color: var(--bg-base);
       color: #f1f5f9;
-      transition: background-color 0.2s ease, color 0.2s ease;
-    }
-    html.theme-light body {
-      color: #0f172a;
     }
 
     .theme-card {
       background-color: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 0.85rem;
+      border-radius: 0.875rem;
     }
 
     .theme-btn-primary {
@@ -125,7 +57,7 @@
       transition: all 0.15s ease;
     }
     .theme-btn-primary:active {
-      transform: scale(0.97);
+      transform: scale(0.98);
     }
 
     .theme-btn-secondary {
@@ -135,8 +67,12 @@
       border-radius: 0.5rem;
       transition: all 0.15s ease;
     }
+    .theme-btn-secondary:hover {
+      border-color: var(--border-hover);
+      background-color: #23273e;
+    }
     .theme-btn-secondary:active {
-      transform: scale(0.97);
+      transform: scale(0.98);
     }
 
     .theme-input {
@@ -144,132 +80,84 @@
       border: 1px solid var(--border);
       color: inherit;
       border-radius: 0.5rem;
+      transition: border-color 0.15s ease;
     }
     .theme-input:focus {
       outline: none;
       border-color: var(--primary);
-      box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+      box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
     }
   </style>
 </head>
 <body class="min-h-screen flex flex-col antialiased pb-24 md:pb-8">
 
-  <!-- ==================== HEADER (CLEAN, NO CLUTTER) ==================== -->
-  <header class="border-b sticky top-0 z-40" style="background-color: var(--bg-surface); border-color: var(--border);">
+  <!-- ==================== HEADER (MINIMAL, LINEAR / SHADCN STYLE) ==================== -->
+  <header class="border-b sticky top-0 z-40 backdrop-blur-md" style="background-color: rgba(15, 17, 26, 0.85); border-color: var(--border);">
     <div class="flex h-14 md:h-16 items-center px-3.5 md:px-8 justify-between max-w-7xl mx-auto w-full gap-2">
       
-      <!-- Right: Brand Logo & Title -->
-      <div class="flex items-center gap-2.5 shrink-0">
-        <div class="w-8 h-8 rounded-xl flex items-center justify-center font-black text-sm tracking-tighter shadow-sm" style="background-color: var(--primary); color: var(--primary-fg);">
+      <!-- Right: Logo & Workspace Title -->
+      <div class="flex items-center gap-3 shrink-0">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center font-black text-sm tracking-tighter" style="background-color: var(--primary); color: var(--primary-fg);">
           13
         </div>
-        <div>
-          <span class="text-xs md:text-sm font-extrabold tracking-tight block">۱۳ASE سیرجان</span>
-          <span class="text-[10px] text-slate-400 hidden sm:block">سامانه مدیریت تعمیرات و خدمات</span>
+        <div class="flex items-center gap-2">
+          <span class="text-xs md:text-sm font-extrabold tracking-tight">۱۳ASE</span>
+          <span class="text-[10px] px-2 py-0.5 rounded-full font-medium text-slate-400 border border-slate-700/50 hidden sm:inline-block">شعبه سیرجان</span>
         </div>
       </div>
 
-      <!-- Center: Desktop Navigation Tabs (Hidden on mobile) -->
-      <nav class="hidden md:flex items-center gap-1.5 text-xs font-semibold">
-        <button onclick="switchTab('overview')" id="nav-overview" class="px-3.5 py-1.5 rounded-lg transition" style="background-color: var(--bg-elevated); color: var(--primary);">پیشخوان تعمیرات</button>
-        <button onclick="switchTab('tickets')" id="nav-tickets" class="px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-white transition">تیکت‌های کادر فنی</button>
-        <button onclick="switchTab('finance')" id="nav-finance" class="px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-white transition flex items-center gap-1.5">
-          <span>امور مالی (امن)</span>
+      <!-- Center: Navigation Tabs (Desktop) -->
+      <nav class="hidden md:flex items-center gap-1 text-xs font-medium">
+        <button onclick="switchTab('overview')" id="nav-overview" class="px-3 py-1.5 rounded-lg transition" style="background-color: var(--bg-elevated); color: var(--primary);">پیشخوان کارگاه</button>
+        <button onclick="switchTab('tickets')" id="nav-tickets" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition">گفتگوی فنی</button>
+        <button onclick="switchTab('finance')" id="nav-finance" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition flex items-center gap-1.5">
+          <span>صندوق و حسابداری</span>
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
         </button>
-        <button onclick="switchTab('customer')" id="nav-customer" class="px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-white transition">پیگیری مشتری</button>
+        <button onclick="switchTab('customer')" id="nav-customer" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition">پیگیری مشتری</button>
       </nav>
 
-      <!-- Left: Fast Intake + Compact Theme Button -->
+      <!-- Left: Quick Actions -->
       <div class="flex items-center gap-2 shrink-0">
         
-        <!-- Palette Button (Always compact, opens modal/drawer on click) -->
-        <button onclick="openThemePicker()" id="themeTriggerBtn" class="w-8 h-8 rounded-lg border flex items-center justify-center text-sm transition hover:border-violet-500" style="background-color: var(--bg-elevated); border-color: var(--border);" title="انتخاب پالت رنگ">
-          🎨
+        <!-- Notifications Bell -->
+        <button class="w-8 h-8 rounded-lg border flex items-center justify-center text-slate-400 hover:text-white transition relative" style="background-color: var(--bg-elevated); border-color: var(--border);">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+          <span class="w-2 h-2 rounded-full bg-amber-400 absolute top-1.5 right-1.5"></span>
         </button>
 
-        <!-- Fast Intake Button (Always accessible) -->
-        <button onclick="openModal('intake-modal')" class="theme-btn-primary px-3 md:px-4 py-1.5 md:py-2 text-xs flex items-center gap-1.5 shadow-sm whitespace-nowrap">
+        <!-- New Intake Button (F2 / Primary CTA) -->
+        <button onclick="openModal('intake-modal')" class="theme-btn-primary px-3 md:px-3.5 py-1.5 text-xs flex items-center gap-1.5 shadow-sm whitespace-nowrap">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
           <span>پذیرش دستگاه</span>
         </button>
+
+        <!-- User Profile Avatar -->
+        <div class="w-8 h-8 rounded-lg border flex items-center justify-center font-bold text-xs text-slate-300 hidden sm:flex" style="background-color: var(--bg-elevated); border-color: var(--border);" title="ایمان ایران‌نژاد (مدیر فنی)">
+          ای
+        </div>
 
       </div>
 
     </div>
   </header>
 
-  <!-- ==================== THEME PICKER MODAL / BOTTOM SHEET (CLOSED BY DEFAULT) ==================== -->
-  <div id="themeModal" class="fixed inset-0 bg-black/70 backdrop-blur-xs z-50 flex items-end sm:items-center justify-center hidden p-0 sm:p-4 transition-all">
-    <div class="theme-card w-full sm:max-w-sm p-5 space-y-4 shadow-2xl rounded-b-none sm:rounded-2xl" style="background-color: var(--bg-surface); border-color: var(--border);">
-      
-      <div class="flex items-center justify-between pb-3 border-b" style="border-color: var(--border);">
-        <div class="flex items-center gap-2">
-          <span class="text-base">🎨</span>
-          <h3 class="font-bold text-sm">انتخاب تم و پالت رنگی</h3>
-        </div>
-        <button onclick="closeThemePicker()" class="w-7 h-7 rounded-lg flex items-center justify-center text-slate-400 hover:text-white text-sm" style="background-color: var(--bg-elevated);">✕</button>
-      </div>
-
-      <div class="grid grid-cols-1 gap-2 text-xs">
-        <!-- Violet -->
-        <button onclick="setTheme('theme-violet')" class="w-full text-right p-3 rounded-xl border flex items-center justify-between transition hover:border-violet-500" style="background-color: var(--bg-card); border-color: var(--border);">
-          <div class="flex items-center gap-2.5">
-            <span class="w-3.5 h-3.5 rounded-full bg-violet-500 ring-2 ring-violet-400/30"></span>
-            <span class="font-bold">بنفش شیک (پیش‌فرض مدرن)</span>
-          </div>
-          <span class="text-[10px] text-violet-400 font-mono">Dark Violet</span>
-        </button>
-
-        <!-- Sapphire Navy -->
-        <button onclick="setTheme('theme-navy')" class="w-full text-right p-3 rounded-xl border flex items-center justify-between transition hover:border-sky-500" style="background-color: var(--bg-card); border-color: var(--border);">
-          <div class="flex items-center gap-2.5">
-            <span class="w-3.5 h-3.5 rounded-full bg-sky-500 ring-2 ring-sky-400/30"></span>
-            <span class="font-bold">سرمه‌ای کهکشانی</span>
-          </div>
-          <span class="text-[10px] text-sky-400 font-mono">Sapphire Dark</span>
-        </button>
-
-        <!-- Emerald Pro -->
-        <button onclick="setTheme('theme-emerald')" class="w-full text-right p-3 rounded-xl border flex items-center justify-between transition hover:border-emerald-500" style="background-color: var(--bg-card); border-color: var(--border);">
-          <div class="flex items-center gap-2.5">
-            <span class="w-3.5 h-3.5 rounded-full bg-emerald-500 ring-2 ring-emerald-400/30"></span>
-            <span class="font-bold">زمردی لوکس</span>
-          </div>
-          <span class="text-[10px] text-emerald-400 font-mono">Emerald Pro</span>
-        </button>
-
-        <!-- Clean Studio Light -->
-        <button onclick="setTheme('theme-light')" class="w-full text-right p-3 rounded-xl border flex items-center justify-between transition hover:border-slate-400 bg-slate-100 text-slate-800" style="border-color: #cbd5e1;">
-          <div class="flex items-center gap-2.5">
-            <span class="w-3.5 h-3.5 rounded-full bg-slate-900"></span>
-            <span class="font-bold text-slate-900">☀️ تم اداری تمام روشن</span>
-          </div>
-          <span class="text-[10px] text-slate-600 font-mono">Studio Light</span>
-        </button>
-      </div>
-
-      <p class="text-[10px] text-slate-400 text-center pt-1">تنظیمات به صورت خودکار در حافظه مرورگر شما ذخیره می‌شود.</p>
-
-    </div>
-  </div>
-
   <!-- ==================== MAIN PAGE CONTAINER ==================== -->
   <main class="flex-1 max-w-7xl mx-auto w-full p-3.5 md:p-8 space-y-4 md:space-y-6">
 
-    <!-- Search & Fast Filter Bar -->
+    <!-- Search & Fast Filters -->
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
       
       <!-- Instant Search -->
       <div class="w-full sm:w-80 relative">
-        <input type="text" id="searchInput" onkeyup="searchOrders()" placeholder="جستجو (کد، نام مشتری، مدل)..." class="theme-input w-full py-2 pr-9 pl-3 text-xs placeholder:text-slate-400">
-        <svg class="w-4 h-4 text-slate-400 absolute right-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        <input type="text" id="searchInput" onkeyup="searchOrders()" placeholder="جستجو (کد پرونده، مشتری، مدل)..." class="theme-input w-full py-2 pr-9 pl-3 text-xs placeholder:text-slate-500">
+        <svg class="w-4 h-4 text-slate-500 absolute right-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
       </div>
 
       <!-- Status Filter Tabs (Scrollable on small mobile) -->
       <div class="flex items-center gap-1 p-1 rounded-xl border text-xs overflow-x-auto whitespace-nowrap max-w-full" style="background-color: var(--bg-elevated); border-color: var(--border);">
         <button onclick="filterStatus('all')" id="pill-all" class="px-3 py-1 rounded-lg font-semibold transition" style="background-color: var(--primary); color: var(--primary-fg);">همه (۴)</button>
-        <button onclick="filterStatus('waiting')" id="pill-waiting" class="px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition">منتظر مشتری (۱)</button>
+        <button onclick="filterStatus('waiting')" id="pill-waiting" class="px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition">در انتظار مشتری (۱)</button>
         <button onclick="filterStatus('diagnosing')" id="pill-diagnosing" class="px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition">عیب‌یابی (۱)</button>
         <button onclick="filterStatus('ready')" id="pill-ready" class="px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition">آماده تحویل (۲)</button>
       </div>
@@ -279,15 +167,15 @@
     <!-- ==================== TAB 1: OVERVIEW ==================== -->
     <div id="tab-content-overview" class="tab-panel space-y-4 md:space-y-6">
 
-      <!-- 4 Quick Stats (2 Columns on mobile, 4 on desktop) -->
+      <!-- 4 Quick Stats -->
       <div class="grid gap-2.5 md:gap-4 grid-cols-2 lg:grid-cols-4">
         
         <div class="theme-card p-3.5 md:p-5">
           <div class="flex items-center justify-between text-[11px] md:text-xs text-slate-400 font-medium">
-            <span>کل فعال</span>
+            <span>در چرخه کارگاه</span>
             <span class="w-2 h-2 rounded-full" style="background-color: var(--primary);"></span>
           </div>
-          <div class="text-xl md:text-3xl font-black mt-1.5 font-mono">۴ <span class="text-xs font-normal text-slate-400">دستگاه</span></div>
+          <div class="text-xl md:text-2xl font-black mt-1 font-mono">۴ <span class="text-xs font-normal text-slate-400">دستگاه</span></div>
         </div>
 
         <div class="theme-card p-3.5 md:p-5">
@@ -295,7 +183,7 @@
             <span>آماده تحویل</span>
             <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
           </div>
-          <div class="text-xl md:text-3xl font-black text-emerald-400 mt-1.5 font-mono">۲ <span class="text-xs font-normal text-slate-400">دستگاه</span></div>
+          <div class="text-xl md:text-2xl font-black text-emerald-400 mt-1 font-mono">۲ <span class="text-xs font-normal text-slate-400">دستگاه</span></div>
         </div>
 
         <div class="theme-card p-3.5 md:p-5">
@@ -303,34 +191,34 @@
             <span>منتظر تأیید</span>
             <span class="w-2 h-2 rounded-full bg-amber-400"></span>
           </div>
-          <div class="text-xl md:text-3xl font-black text-amber-400 mt-1.5 font-mono">۱ <span class="text-xs font-normal text-slate-400">دستگاه</span></div>
+          <div class="text-xl md:text-2xl font-black text-amber-400 mt-1 font-mono">۱ <span class="text-xs font-normal text-slate-400">دستگاه</span></div>
         </div>
 
         <div class="theme-card p-3.5 md:p-5">
           <div class="flex items-center justify-between text-[11px] md:text-xs text-sky-400 font-medium">
-            <span>در حال بررسی</span>
+            <span>در حال عیب‌یابی</span>
             <span class="w-2 h-2 rounded-full bg-sky-400"></span>
           </div>
-          <div class="text-xl md:text-3xl font-black text-sky-400 mt-1.5 font-mono">۱ <span class="text-xs font-normal text-slate-400">دستگاه</span></div>
+          <div class="text-xl md:text-2xl font-black text-sky-400 mt-1 font-mono">۱ <span class="text-xs font-normal text-slate-400">دستگاه</span></div>
         </div>
 
       </div>
 
-      <!-- Orders List (Mobile-Optimized Cards with Perfect Aligned Badges) -->
+      <!-- Orders List (Clean Rows with Professional "ویرایش" and "تسویه و تحویل" Actions) -->
       <div class="theme-card overflow-hidden">
         
         <div class="p-3.5 md:p-4 border-b flex justify-between items-center text-xs" style="border-color: var(--border);">
-          <span class="font-bold text-xs md:text-sm">پرونده‌های فعال کارگاه تعمیرات</span>
-          <span class="text-slate-400 font-mono text-[11px]">۴ مورد</span>
+          <span class="font-bold text-xs md:text-sm">دستگاه‌های جاری در کارگاه</span>
+          <span class="text-slate-400 font-mono text-[11px]">۴ پرونده</span>
         </div>
 
         <div class="divide-y" style="border-color: var(--border);" id="ordersContainer">
 
           <!-- Row 1: Asus TUF Gaming -->
-          <div class="order-item p-3.5 md:p-4 flex flex-col md:flex-row md:items-center justify-between gap-3" data-status="waiting" data-search="علیرضا کریمی asus tuf 1082">
+          <div class="order-item p-3.5 md:p-4 flex flex-col md:flex-row md:items-center justify-between gap-3 hover:bg-white/[0.015] transition" data-status="waiting" data-search="علیرضا کریمی asus tuf 1082">
             
             <div class="flex items-start gap-3">
-              <div class="w-9 h-9 rounded-xl flex items-center justify-center font-bold text-xs shrink-0 font-mono" style="background-color: var(--bg-elevated); border: 1px solid var(--border);">
+              <div class="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-xs shrink-0 font-mono" style="background-color: var(--bg-elevated); border: 1px solid var(--border);">
                 #1082
               </div>
 
@@ -345,22 +233,25 @@
               </div>
             </div>
 
-            <!-- Responsive Actions Area -->
+            <!-- Actions Area -->
             <div class="flex items-center justify-between md:justify-end gap-2.5 pt-2.5 md:pt-0 border-t md:border-t-0" style="border-color: var(--border);">
               
-              <div class="text-right hidden lg:block text-xs">
-                <div class="font-semibold">ایمان ایران‌نژاد</div>
-                <div class="text-[10px] text-slate-400">سخت‌افزار تخصصی</div>
+              <!-- Assignee Pill -->
+              <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg border text-xs" style="background-color: var(--bg-surface); border-color: var(--border);">
+                <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+                <span class="text-slate-300 font-medium">ایمان ایران‌نژاد</span>
               </div>
 
-              <!-- Badge with right-aligned dot -->
-              <span class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap" style="background-color: var(--badge-waiting-bg); color: var(--badge-waiting-text); border: 1px solid var(--badge-waiting-border);">
+              <!-- Status Badge -->
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold whitespace-nowrap" style="background-color: var(--badge-waiting-bg); color: var(--badge-waiting-text); border: 1px solid var(--badge-waiting-border);">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
                 <span>در انتظار تأیید</span>
               </span>
 
-              <button onclick="openReassignModal('1082', 'لپ‌تاپ Asus TUF FX506', 'ایمان ایران‌نژاد')" class="theme-btn-secondary px-3 py-1.5 text-xs font-semibold whitespace-nowrap">
-                تغییر تعمیرکار
+              <!-- Standard Edit Button (Opens full file management modal) -->
+              <button onclick="openEditModal('1082', 'لپ‌تاپ Asus TUF FX506', 'ایمان ایران‌نژاد', 'waiting')" class="theme-btn-secondary px-3 py-1.5 text-xs font-semibold whitespace-nowrap flex items-center gap-1">
+                <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+                <span>ویرایش</span>
               </button>
 
             </div>
@@ -368,10 +259,10 @@
           </div>
 
           <!-- Row 2: Green Striker Case -->
-          <div class="order-item p-3.5 md:p-4 flex flex-col md:flex-row md:items-center justify-between gap-3" data-status="diagnosing" data-search="فاطمه حسینی کیس گرین green 1081">
+          <div class="order-item p-3.5 md:p-4 flex flex-col md:flex-row md:items-center justify-between gap-3 hover:bg-white/[0.015] transition" data-status="diagnosing" data-search="فاطمه حسینی کیس گرین green 1081">
             
             <div class="flex items-start gap-3">
-              <div class="w-9 h-9 rounded-xl flex items-center justify-center font-bold text-xs shrink-0 font-mono" style="background-color: var(--bg-elevated); border: 1px solid var(--border);">
+              <div class="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-xs shrink-0 font-mono" style="background-color: var(--bg-elevated); border: 1px solid var(--border);">
                 #1081
               </div>
 
@@ -388,18 +279,19 @@
 
             <div class="flex items-center justify-between md:justify-end gap-2.5 pt-2.5 md:pt-0 border-t md:border-t-0" style="border-color: var(--border);">
               
-              <div class="text-right hidden lg:block text-xs">
-                <div class="font-semibold text-amber-300">تکنسین ۲ (علی)</div>
-                <div class="text-[10px] text-slate-400">منتقل‌شده از ایمان</div>
+              <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg border text-xs" style="background-color: var(--bg-surface); border-color: var(--border);">
+                <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+                <span class="text-slate-300 font-medium">علی (تکنسین ۲)</span>
               </div>
 
-              <span class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap" style="background-color: var(--badge-diag-bg); color: var(--badge-diag-text); border: 1px solid var(--badge-diag-border);">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold whitespace-nowrap" style="background-color: var(--badge-diag-bg); color: var(--badge-diag-text); border: 1px solid var(--badge-diag-border);">
                 <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
                 <span>در حال عیب‌یابی</span>
               </span>
 
-              <button onclick="openReassignModal('1081', 'کیس کامپیوتر Green Striker', 'تکنسین ۲ (علی)')" class="theme-btn-secondary px-3 py-1.5 text-xs font-semibold whitespace-nowrap">
-                تغییر تعمیرکار
+              <button onclick="openEditModal('1081', 'کیس کامپیوتر Green Striker', 'علی (تکنسین ۲)', 'diagnosing')" class="theme-btn-secondary px-3 py-1.5 text-xs font-semibold whitespace-nowrap flex items-center gap-1">
+                <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+                <span>ویرایش</span>
               </button>
 
             </div>
@@ -407,10 +299,10 @@
           </div>
 
           <!-- Row 3: MacBook Pro M1 (Ready) -->
-          <div class="order-item p-3.5 md:p-4 flex flex-col md:flex-row md:items-center justify-between gap-3" data-status="ready" data-search="محسن صادقی مک بوک macbook 1079">
+          <div class="order-item p-3.5 md:p-4 flex flex-col md:flex-row md:items-center justify-between gap-3 hover:bg-white/[0.015] transition" data-status="ready" data-search="محسن صادقی مک بوک macbook 1079">
             
             <div class="flex items-start gap-3">
-              <div class="w-9 h-9 rounded-xl flex items-center justify-center font-bold text-xs shrink-0 font-mono" style="background-color: var(--bg-elevated); border: 1px solid var(--border);">
+              <div class="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-xs shrink-0 font-mono" style="background-color: var(--bg-elevated); border: 1px solid var(--border);">
                 #1079
               </div>
 
@@ -427,18 +319,22 @@
 
             <div class="flex items-center justify-between md:justify-end gap-2.5 pt-2.5 md:pt-0 border-t md:border-t-0" style="border-color: var(--border);">
               
-              <div class="text-right hidden lg:block text-xs">
-                <div class="font-semibold">ایمان ایران‌نژاد</div>
-                <div class="text-[10px] text-slate-400">تعمیر خاتمه‌یافته</div>
+              <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg border text-xs" style="background-color: var(--bg-surface); border-color: var(--border);">
+                <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+                <span class="text-slate-300 font-medium">ایمان ایران‌نژاد</span>
               </div>
 
-              <span class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap" style="background-color: var(--badge-ready-bg); color: var(--badge-ready-text); border: 1px solid var(--badge-ready-border);">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold whitespace-nowrap" style="background-color: var(--badge-ready-bg); color: var(--badge-ready-text); border: 1px solid var(--badge-ready-border);">
                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
                 <span>آماده تحویل</span>
               </span>
 
-              <button onclick="deliverOrder('1079', 'محسن صادقی')" class="theme-btn-primary px-3 py-1.5 text-xs font-semibold whitespace-nowrap">
+              <button onclick="deliverOrder('1079', 'محسن صادقی')" class="theme-btn-primary px-3.5 py-1.5 text-xs font-semibold whitespace-nowrap bg-emerald-600 hover:bg-emerald-500">
                 تسویه و تحویل
+              </button>
+
+              <button onclick="openEditModal('1079', 'مک‌بوک پرو M1 2020', 'ایمان ایران‌نژاد', 'ready')" class="theme-btn-secondary p-1.5 text-slate-400 hover:text-white" title="ویرایش پرونده">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
               </button>
 
             </div>
@@ -446,10 +342,10 @@
           </div>
 
           <!-- Row 4: HP EliteBook (Ready) -->
-          <div class="order-item p-3.5 md:p-4 flex flex-col md:flex-row md:items-center justify-between gap-3" data-status="ready" data-search="رضا سعیدی hp elitebook 1078">
+          <div class="order-item p-3.5 md:p-4 flex flex-col md:flex-row md:items-center justify-between gap-3 hover:bg-white/[0.015] transition" data-status="ready" data-search="رضا سعیدی hp elitebook 1078">
             
             <div class="flex items-start gap-3">
-              <div class="w-9 h-9 rounded-xl flex items-center justify-center font-bold text-xs shrink-0 font-mono" style="background-color: var(--bg-elevated); border: 1px solid var(--border);">
+              <div class="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-xs shrink-0 font-mono" style="background-color: var(--bg-elevated); border: 1px solid var(--border);">
                 #1078
               </div>
 
@@ -466,18 +362,22 @@
 
             <div class="flex items-center justify-between md:justify-end gap-2.5 pt-2.5 md:pt-0 border-t md:border-t-0" style="border-color: var(--border);">
               
-              <div class="text-right hidden lg:block text-xs">
-                <div class="font-semibold">تکنسین ۲ (علی)</div>
-                <div class="text-[10px] text-slate-400">تعمیر خاتمه‌یافته</div>
+              <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg border text-xs" style="background-color: var(--bg-surface); border-color: var(--border);">
+                <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+                <span class="text-slate-300 font-medium">علی (تکنسین ۲)</span>
               </div>
 
-              <span class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap" style="background-color: var(--badge-ready-bg); color: var(--badge-ready-text); border: 1px solid var(--badge-ready-border);">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold whitespace-nowrap" style="background-color: var(--badge-ready-bg); color: var(--badge-ready-text); border: 1px solid var(--badge-ready-border);">
                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
                 <span>آماده تحویل</span>
               </span>
 
-              <button onclick="deliverOrder('1078', 'رضا سعیدی')" class="theme-btn-primary px-3 py-1.5 text-xs font-semibold whitespace-nowrap">
+              <button onclick="deliverOrder('1078', 'رضا سعیدی')" class="theme-btn-primary px-3.5 py-1.5 text-xs font-semibold whitespace-nowrap bg-emerald-600 hover:bg-emerald-500">
                 تسویه و تحویل
+              </button>
+
+              <button onclick="openEditModal('1078', 'لپ‌تاپ HP EliteBook', 'علی (تکنسین ۲)', 'ready')" class="theme-btn-secondary p-1.5 text-slate-400 hover:text-white" title="ویرایش پرونده">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
               </button>
 
             </div>
@@ -565,13 +465,14 @@
           <div>
             <h2 class="text-sm md:text-base font-bold flex items-center gap-2">
               <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
-              امور مالی و صندوق مغازه (محرمانه مدیریت)
+              صندوق و تراز روزانه (حالت محرمانه پیشخوان)
             </h2>
             <p class="text-[11px] text-slate-400 mt-0.5">پنهان از دید مراجعین پیشخوان مغازه.</p>
           </div>
 
-          <button onclick="toggleMask()" id="maskBtn" class="theme-btn-secondary px-3 py-1.5 text-xs whitespace-nowrap">
-            👁️ مخفی‌سازی ارقام روی مانیتور
+          <button onclick="toggleMask()" id="maskBtn" class="theme-btn-secondary px-3 py-1.5 text-xs whitespace-nowrap flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l18 18"/></svg>
+            <span id="maskBtnText">مخفی‌سازی ارقام</span>
           </button>
         </div>
 
@@ -593,7 +494,7 @@
         </div>
 
         <div class="pt-3 border-t space-y-2.5 text-xs" style="border-color: var(--border);">
-          <h4 class="font-bold">سهم پورسانت کادر فنی در این ماه (تسویه نشده):</h4>
+          <h4 class="font-bold text-slate-300">سهم تسویه‌نشده پرسنل در این ماه:</h4>
           
           <div class="p-3 rounded-xl border flex justify-between items-center" style="background-color: var(--bg-surface); border-color: var(--border);">
             <div>
@@ -605,7 +506,7 @@
 
           <div class="p-3 rounded-xl border flex justify-between items-center" style="background-color: var(--bg-surface); border-color: var(--border);">
             <div>
-              <span class="font-bold block">تکنسین ۲ (نرم‌افزار)</span>
+              <span class="font-bold block">علی (تکنسین ۲)</span>
               <span class="text-slate-400 text-[11px]">۱۶ تعمیر موفق</span>
             </div>
             <span class="font-mono font-bold money-val" style="color: var(--primary);">۲,۶۵۰,۰۰۰ تومان</span>
@@ -620,7 +521,7 @@
       
       <div class="theme-card p-4 md:p-5 space-y-4">
         <div class="text-center space-y-1">
-          <div class="w-8 h-8 mx-auto rounded-xl flex items-center justify-center font-bold text-xs mb-1" style="background-color: var(--primary); color: var(--primary-fg);">
+          <div class="w-8 h-8 mx-auto rounded-lg flex items-center justify-center font-bold text-xs mb-1" style="background-color: var(--primary); color: var(--primary-fg);">
             13
           </div>
           <h3 class="font-bold text-sm">پیگیری آنلاین خدمات ۱۳ASE</h3>
@@ -715,27 +616,23 @@
 
   </main>
 
-  <!-- ==================== MOBILE BOTTOM NAVIGATION BAR (FIXED, EASY ACCESS) ==================== -->
-  <nav class="md:hidden fixed bottom-0 left-0 right-0 border-t py-1.5 px-3 flex items-center justify-around z-40 shadow-lg" style="background-color: var(--bg-surface); border-color: var(--border);">
-    <button onclick="switchTab('overview')" id="mob-nav-overview" class="flex flex-col items-center gap-0.5 text-xs font-bold transition" style="color: var(--primary);">
+  <!-- ==================== MOBILE BOTTOM NAVIGATION (CLEAN 4 ESSENTIAL TABS) ==================== -->
+  <nav class="md:hidden fixed bottom-0 left-0 right-0 border-t py-2 px-4 flex items-center justify-around z-40 backdrop-blur-md" style="background-color: rgba(15, 17, 26, 0.92); border-color: var(--border);">
+    <button onclick="switchTab('overview')" id="mob-nav-overview" class="flex flex-col items-center gap-1 text-xs font-bold transition" style="color: var(--primary);">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
-      <span class="text-[10px]">تعمیرات</span>
+      <span class="text-[10px]">پیشخوان</span>
     </button>
-    <button onclick="switchTab('tickets')" id="mob-nav-tickets" class="flex flex-col items-center gap-0.5 text-slate-400 text-xs transition">
+    <button onclick="switchTab('tickets')" id="mob-nav-tickets" class="flex flex-col items-center gap-1 text-slate-400 text-xs transition">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
       <span class="text-[10px]">تیکت‌ها</span>
     </button>
-    <button onclick="switchTab('finance')" id="mob-nav-finance" class="flex flex-col items-center gap-0.5 text-slate-400 text-xs transition">
+    <button onclick="switchTab('finance')" id="mob-nav-finance" class="flex flex-col items-center gap-1 text-slate-400 text-xs transition">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-      <span class="text-[10px]">مالی</span>
+      <span class="text-[10px]">امور مالی</span>
     </button>
-    <button onclick="switchTab('customer')" id="mob-nav-customer" class="flex flex-col items-center gap-0.5 text-slate-400 text-xs transition">
+    <button onclick="switchTab('customer')" id="mob-nav-customer" class="flex flex-col items-center gap-1 text-slate-400 text-xs transition">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
-      <span class="text-[10px]">مشتری</span>
-    </button>
-    <button onclick="openThemePicker()" class="flex flex-col items-center gap-0.5 text-slate-400 text-xs transition hover:text-white">
-      <span class="text-sm leading-none">🎨</span>
-      <span class="text-[10px]">تم</span>
+      <span class="text-[10px]">پیگیری</span>
     </button>
   </nav>
 
@@ -746,7 +643,7 @@
       <div class="flex items-center justify-between pb-3 border-b" style="border-color: var(--border);">
         <div>
           <h3 class="font-bold text-sm md:text-base">پذیرش سریع دستگاه در پیشخوان</h3>
-          <p class="text-[11px] text-slate-400 mt-0.5">ثبت مشخصات در حضور مشتری</p>
+          <p class="text-[11px] text-slate-400 mt-0.5">ثبت مشخصات و صدور قبض در حضور مشتری</p>
         </div>
         <button onclick="closeModal('intake-modal')" class="text-slate-400 hover:text-white text-sm p-1">✕</button>
       </div>
@@ -815,7 +712,7 @@
             <label class="block text-slate-400 mb-1 font-medium">تعمیرکار مسئول اولیه</label>
             <select class="theme-input w-full py-1.5 px-3">
               <option>ایمان ایران‌نژاد (سخت‌افزار)</option>
-              <option>تکنسین ۲ (نرم‌افزار)</option>
+              <option>علی (تکنسین ۲)</option>
             </select>
           </div>
         </div>
@@ -832,78 +729,54 @@
     </div>
   </div>
 
-  <!-- ==================== MODAL: REASSIGN TECH ==================== -->
-  <div id="reassign-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+  <!-- ==================== MODAL: EDIT & MANAGE ORDER ==================== -->
+  <div id="edit-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
     <div class="theme-card w-full max-w-md p-5 space-y-4 shadow-2xl" style="background-color: var(--bg-surface);">
       
       <div class="flex items-center justify-between pb-3 border-b" style="border-color: var(--border);">
-        <h3 class="font-bold text-sm">تغییر تعمیرکار مسئول پرونده</h3>
-        <button onclick="closeModal('reassign-modal')" class="text-slate-400 hover:text-white">✕</button>
-      </div>
-
-      <div class="p-3 rounded-xl border text-xs space-y-1" style="background-color: var(--bg-card); border-color: var(--border);">
-        <div class="flex justify-between">
-          <span class="text-slate-400">شماره پرونده:</span>
-          <span id="reassignId" class="font-mono font-bold" style="color: var(--primary);">#1082</span>
+        <div>
+          <h3 class="font-bold text-sm">مدیریت و ویرایش پرونده</h3>
+          <p id="editSubtitle" class="text-[11px] text-slate-400 mt-0.5">پرونده #1082</p>
         </div>
-        <div class="flex justify-between">
-          <span class="text-slate-400">دستگاه:</span>
-          <span id="reassignDev" class="font-bold">لپ‌تاپ Asus TUF</span>
-        </div>
+        <button onclick="closeModal('edit-modal')" class="text-slate-400 hover:text-white">✕</button>
       </div>
 
       <div class="space-y-3 text-xs">
         <div>
-          <label class="block text-slate-400 mb-1 font-medium">تعمیرکار جدید:</label>
-          <select id="newTechSelect" class="theme-input w-full py-1.5 px-3">
-            <option>تکنسین ۲ (علی - نرم‌افزار / نصب و تست)</option>
-            <option>ایمان ایران‌نژاد (سخت‌افزار / برد تخصصی)</option>
-            <option>تعمیرکار همکار بیرونی (تعویض چیپ BGA)</option>
+          <label class="block text-slate-400 mb-1 font-medium">تکنسین مسئول پرونده:</label>
+          <select id="editTechSelect" class="theme-input w-full py-1.5 px-3">
+            <option value="ایمان ایران‌نژاد">ایمان ایران‌نژاد (سخت‌افزار / برد تخصصی)</option>
+            <option value="علی (تکنسین ۲)">علی (تکنسین ۲ - نرم‌افزار و قطعه‌شویی)</option>
+            <option value="همکار بیرونی">تعمیرکار همکار بیرونی (BGA / لیزر)</option>
           </select>
         </div>
 
         <div>
-          <label class="block text-slate-400 mb-1 font-medium">علت جابه‌جایی و وضعیت فعلی:</label>
-          <textarea id="reassignNote" rows="2" placeholder="علت انتقال را وارد کنید..." class="theme-input w-full p-2"></textarea>
+          <label class="block text-slate-400 mb-1 font-medium">تغییر وضعیت مرحله کاری:</label>
+          <select id="editStatusSelect" class="theme-input w-full py-1.5 px-3">
+            <option value="diagnosing">در حال عیب‌یابی و تست قطعات</option>
+            <option value="waiting">در انتظار تأیید پیش‌فاکتور مشتری</option>
+            <option value="in_progress">در حال تعمیر و تعویض قطعه</option>
+            <option value="ready">خاتمه تعمیر و آماده تحویل</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-slate-400 mb-1 font-medium">یادداشت داخلی یا علت انتقال پرونده:</label>
+          <textarea id="editNote" rows="2" placeholder="توضیح فنی برای پرونده یا علت تغییر تکنسین..." class="theme-input w-full p-2"></textarea>
         </div>
       </div>
 
       <div class="pt-2 flex justify-end gap-2 text-xs">
-        <button onclick="closeModal('reassign-modal')" class="theme-btn-secondary px-3.5 py-1.5">انصراف</button>
-        <button onclick="confirmReassign()" class="theme-btn-primary px-4 py-1.5">ثبت انتقال</button>
+        <button onclick="closeModal('edit-modal')" class="theme-btn-secondary px-3.5 py-1.5">انصراف</button>
+        <button onclick="saveOrderEdit()" class="theme-btn-primary px-4 py-1.5">ذخیره تغییرات</button>
       </div>
 
     </div>
   </div>
 
   <script>
-    // Theme Modal / Bottom Sheet Control
-    function openThemePicker() {
-      document.getElementById('themeModal').classList.remove('hidden');
-    }
-    function closeThemePicker() {
-      document.getElementById('themeModal').classList.add('hidden');
-    }
-
-    // Close theme modal when clicking the dark backdrop
-    document.getElementById('themeModal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeThemePicker();
-      }
-    });
-
-    // Live Theme Switcher
-    function setTheme(themeName) {
-      document.documentElement.className = themeName;
-      localStorage.setItem('13ase-theme', themeName);
-      closeThemePicker();
-    }
-
-    // Load saved or default
-    const savedTheme = localStorage.getItem('13ase-theme') || 'theme-violet';
-    document.documentElement.className = savedTheme;
-
-    // Tab Switching (Both Desktop & Mobile Nav)
+    // Tab Switching
     function switchTab(tabId) {
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.add('hidden'));
       
@@ -945,11 +818,10 @@
         activeMobNav.classList.add('font-bold');
       }
 
-      // Scroll smoothly to top on mobile tab switch
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Modal Control
+    // Modal Controls
     function openModal(id) {
       document.getElementById(id).classList.remove('hidden');
     }
@@ -957,17 +829,22 @@
       document.getElementById(id).classList.add('hidden');
     }
 
-    // Reassign Modal
-    function openReassignModal(id, dev, curTech) {
-      document.getElementById('reassignId').innerText = '#' + id;
-      document.getElementById('reassignDev').innerText = dev;
-      openModal('reassign-modal');
+    // Edit Order Modal
+    let currentEditId = null;
+    function openEditModal(id, devName, curTech, curStatus) {
+      currentEditId = id;
+      document.getElementById('editSubtitle').innerText = '#' + id + ' • ' + devName;
+      document.getElementById('editTechSelect').value = curTech;
+      document.getElementById('editStatusSelect').value = curStatus;
+      document.getElementById('editNote').value = '';
+      openModal('edit-modal');
     }
 
-    function confirmReassign() {
-      const tech = document.getElementById('newTechSelect').value;
-      alert('تعمیرکار با موفقیت به ' + tech + ' تغییر یافت و ثبت شد.');
-      closeModal('reassign-modal');
+    function saveOrderEdit() {
+      const tech = document.getElementById('editTechSelect').value;
+      const status = document.getElementById('editStatusSelect').value;
+      alert('تغییرات پرونده #' + currentEditId + ' با موفقیت ثبت شد (تکنسین: ' + tech + ').');
+      closeModal('edit-modal');
     }
 
     // Status Filter Pills
@@ -1011,7 +888,7 @@
     // Deliver
     function deliverOrder(id, name) {
       if (confirm('تسویه و تحویل نهایی پرونده #' + id + ' (مشتری: ' + name + ') ثبت شود؟')) {
-        alert('تحویل با موفقیت ثبت شد.');
+        alert('تحویل با موفقیت ثبت شد و فاکتور چاپ شد.');
       }
     }
 
@@ -1023,11 +900,11 @@
         if (!el.getAttribute('data-orig')) el.setAttribute('data-orig', el.innerText);
         el.innerText = masked ? '•••••••• تومان' : el.getAttribute('data-orig');
       });
-      document.getElementById('maskBtn').innerText = masked ? '👁️ نمایش ارقام' : '👁️ مخفی‌سازی ارقام روی مانیتور';
+      document.getElementById('maskBtnText').innerText = masked ? 'نمایش ارقام' : 'مخفی‌سازی ارقام';
     }
 
     function submitIntake() {
-      alert('دستگاه پذیرش شد، پیامک صادر و برچسب آماده چاپ است.');
+      alert('دستگاه پذیرش شد، پیامک صادر و برچسب بارکد آماده چاپ است.');
       closeModal('intake-modal');
     }
   </script>
